@@ -30,7 +30,7 @@ public class MMN12 {
         population = createStartingPopulation(equation);
 
         do { // Main loop - new generation
-            if (generationCounter % RESTART_EVERY_GENERATIONS == 0 && generationCounter > 0)  // Restart population every 100 generations
+            if (generationCounter % RESTART_EVERY_GENERATIONS == 0 && generationCounter > 0)  // Restart population
                 population = createStartingPopulation(equation);
             int currentNicheSize;
             int currentNicheCounter;
