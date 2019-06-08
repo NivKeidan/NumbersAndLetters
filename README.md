@@ -9,6 +9,7 @@ This program solves numbers and letters riddle.
 Compile the java files and run MMN12
 
 The equations are solved using [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm)
+
 The equations solved can have addition, subtraction and multiplaction (no division at the moment)
 
 ## The algorithm
@@ -19,7 +20,7 @@ I assume you know how genetic algorithms work, so I will just touch some importa
 * When creating new offsprings or performing mutations, several validations are done to ensure that new members are valid
 * The best member is always kept for the next generation
 
-### Avoidiing early convergence
+### Avoiding early convergence
 Since early ocnvergence is highly likely in this case, we use:
 * Niches (sub populations) are used to avoid quick convergence and to keep the population varied
 * High mutation chances
