@@ -6,7 +6,7 @@ This program solves numbers and letters riddle.
 (For example, SEND+MORE=MONEY, a solution is: 9567+1085=10652)
 
 ### How to run
-compile the java files and run MMN12
+Compile the java files and run MMN12
 
 The equations are solved using [genetic algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm)
 The equations solved can have addition, subtraction and multiplaction (no division at the moment)
