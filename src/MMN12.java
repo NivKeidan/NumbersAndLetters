@@ -90,7 +90,7 @@ public class MMN12 {
         if (bestFitness != 0)
             System.out.println("No Solution Found!");
         else
-            System.out.print(equation.printFinalAnswer(bestSolution));
+            System.out.println(equation.printFinalAnswer(bestSolution));
     }
 
     private static Solution[] createStartingPopulation(Equation equation) {
@@ -108,7 +108,7 @@ public class MMN12 {
         input = new Scanner(System.in);
         Equation equation = null;
         do {
-            System.out.print("Enter desired equation to solve");
+            System.out.println("Enter desired equation to solve");
             try {
                 equation = new Equation(input.nextLine().toUpperCase());
             } catch (IllegalArgumentException e) {
