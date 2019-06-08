@@ -112,7 +112,7 @@ public class MMN12 {
             try {
                 equation = new Equation(input.nextLine().toUpperCase());
             } catch (IllegalArgumentException e) {
-                System.out.printf("Bad input%nVerify syntax and make sure you use 10 characters or less%n");
+                System.out.println(e.getMessage());
             }
         } while (equation == null);
         return equation;

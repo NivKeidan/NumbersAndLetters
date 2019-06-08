@@ -25,11 +25,13 @@ public class Equation {
     public Equation(String equation) {
         indexesThatCantBeZero = new ArrayList<>();
         if (!validateSyntax(equation))
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Bad syntax. Make sure you use no spaces and only +, - or * as operator");
         this.chars = extractLetters(equation);
         if (chars.length > MMN12.MAX_NUMBER_OF_LETTERS)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Use less characters");
         extractExpressions(equation);
+        if (!areLengthsValid())
+            throw new IllegalArgumentException("Your equation makes no sense");
     }
 
     public long translateResult(Solution sol) {
@@ -106,6 +108,15 @@ public class Equation {
             tempString = tempString + sol.getNumbersArray()[index];
         }
         return tempString;
+    }
+
+    private Boolean areLengthsValid() {
+        switch (ExpressionOperator) {
+            case "-":
+                return !(ExpressionResult.length() > Math.max(Expression1.length(), Expression2.length()));
+            default:
+                return !(ExpressionResult.length() < Math.max(Expression1.length(), Expression2.length()));
+        }
     }
 
 
