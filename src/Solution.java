@@ -82,7 +82,7 @@ public class Solution {
         return this.fitnessScore;
     }
 
-    private boolean isNumberValid(int newNumber) {
+    private boolean isNumberFree(int newNumber) {
         // Check if argument number is free to use
         return getFreeNumbersArray().contains(newNumber);
     }
@@ -108,14 +108,14 @@ public class Solution {
             throw new IndexOutOfBoundsException();
     }
 
-    private boolean setNumber (int index, int number) {
+    private boolean setNumber(int index, int number) {
         // Inserts the number according to index
         // Validates
         int numberToSet = number;
-        if (!isNumberValid(numberToSet))
-            numberToSet = getRandomClosestFreeNumber(number);
+        if (!isNumberFree(numberToSet))
+            numberToSet = getRandomClosestFreeNumber(numberToSet);
         if (numberToSet == 0 && Equation.indexesThatCantBeZero.contains(index))
-            numberToSet = getRandomClosestFreeNumber(number);
+            numberToSet = getRandomClosestFreeNumber(numberToSet);
         if (numberToSet < 0 || numberToSet > 9)
             return false;
         numbers[index] = numberToSet;
@@ -167,8 +167,8 @@ public class Solution {
                 else
                     numToCheck = number + distance;
 
-                if (isNumberValid(numToCheck))
-                        return numToCheck;
+                if (isNumberFree(numToCheck))
+                    return numToCheck;
                 startFromMinus = !startFromMinus;
             }
         }
